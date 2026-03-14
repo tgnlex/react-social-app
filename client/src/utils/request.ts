@@ -1,0 +1,14 @@
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: process.env.REACT_APP_BACKEND_URL,
+  withCredentials: true
+});
+
+function request(url, options) {
+  return api(url, options)
+    .then(res => res.data)
+    .catch(error => Promise.reject(error?.response?.data?.message ? "Error"})
+};
+
+export { request, api };
