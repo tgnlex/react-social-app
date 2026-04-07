@@ -1,0 +1,91 @@
+
+:root {
+  #weight-400();
+  font-family: @font-stack;
+  line-height: @line-height;
+  font-size: 16px;
+  color-scheme: light dark;
+  color: @text;
+  background-color: @bg; 
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  #base();
+  box-sizing: border-box;
+}
+
+
+
+#app {
+  #m-auto();
+  @max-width: 1280px;
+  @pad: 2rem;
+  max-width: @max-width;
+  padding: @pad;
+  text-align: center;
+}
+
+
+a {
+  #weight-500(); 
+  @decor: inherit;
+  @color: #646cff;
+  @color--hover: #535bf2;
+  color: @color;
+  text-decoration: @decor;
+  & :hover {
+    #underline();
+    color: @color--hover;
+  }
+}
+
+body {
+  #flex-col();
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  #weight-300();
+  @line-height: 1.1;
+  @fs: clamp(2.8em, 50px 3.2em);
+  font-size: @fs;
+  line-height: @line-height;
+}
+
+button {
+  #pointer(); #round-corner(); #font-pop(); #clear-border(); #weight-500();
+  @font-size: clamp(0.8rem 1em 1.2rem);
+  @transition: border-color 0.25s;
+  @pad: 0.6em 1.2em;
+  @bg: #1a1a1a;
+  padding: @pad;
+  font-size: @font-size;
+  background-color: @bg;
+  transition: @transition;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto @wk-ring;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {    
+    color: @light--text;
+    background-color: @light--bg;
+  }
+  a:hover {
+    color: @light--link--hover;
+  }
+  button {
+    background-color: @light--bg--btn;
+  }
+}

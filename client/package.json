@@ -13,9 +13,9 @@
     "@linaria/core": "^7.0.0",
     "@linaria/react": "^7.0.1",
     "@wyw-in-js/babel-preset": "^1.0.6",
-    "axios": "^1.13.6",
+    "@wyw-in-js/vite": "^1.0.7",
+    "less": "^4.6.4",
     "linaria": "^7.0.1",
-    "polished": "^4.3.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router": "^7.13.1"

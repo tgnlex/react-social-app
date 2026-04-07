@@ -1,16 +1,12 @@
-import { Login } from '../ui'
+import Welcome from '../components/text/welcome.tsx';
+import Login from '../components/forms/login.tsx';
 
 function Index() {
-  const placeholder = {email: 'Email Address', password: 'Password'}
   return (
     <main className="main-container">
-      {/*** WELCOME TEXT ***/}
-       <div className="welcome">
-        <h2 className="welcome--text">Welcome</h2>
-      </div>
-
+      <Welcome />
       <Login />
-      </main>
+    </main>
   )
 };
 
