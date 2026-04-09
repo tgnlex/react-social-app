@@ -17,11 +17,9 @@ function Navbar() {
     <nav className="navbar">
       <ul className="navbar--list">
         <NavItem text={"Home"} href={"/"} />
-        <NavItem text={"Blog"} href={"/blog"} />
-        <NavItem text={"Shop"} href={"/shop"} />
       </ul>
     </nav>
   )
 }
 
-export { Navbar, NavItem }r;
+export default Navbar;

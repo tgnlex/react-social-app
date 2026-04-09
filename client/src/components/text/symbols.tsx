@@ -4,4 +4,4 @@ function Copyright() {
 };
 
 
-export { Copyright }l
+export { Copyright };

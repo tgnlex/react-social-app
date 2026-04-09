@@ -1,0 +1,138 @@
+:root {
+  --font-pop: Poppins;
+  --font-stack: system-ui Avenir, Helvetica, Arial, sans-serif;
+  --fs-btn: clamp(0.8rem 1em 1.2rem);
+  --fs-link: clamp(1rem 1.2em 1.4rem);
+  --card--pad: clamp(1.5em 32px 2.5em)
+  --round-corners: clamp(0.2rem 8px 0.8rem);
+  --clear-border: 1px solid transparent;
+  --text: rgba(255, 255, 255, 0.87);
+  --bg: rgba(24, 24, 2, 0.91);
+  --spin-animation: spin infinite 20s linear;
+
+
+  --ds-1: drop-shadow(0 0 2em #646cffaa);
+  --ds-2: drop-shadow(0 0 2em #61dafbaa);
+  --spin-start: rotate(0deg);
+  --spin-end: rotate(360deg);
+
+  --wk-ring: -webkit-focus-ring-color;
+
+  --mobile: 600px;
+  --tablet: 720px;
+  --laptop: 920px;
+  --pc: 1200px;
+
+
+
+  line-height: 1.5;
+  font-family: var(--font-stack);
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text);
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  --body--min-height: clamp(95vh 100% 100vh);
+  min-height: var(--body--min-height);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+a {
+  --weight: 500;
+  --decor: inherit;
+  --color: #646cff;
+  --hover--color: #535bf2;
+  --hover--decor: underline;
+  font-size: var(--fs-link);
+  color: var(--color);
+  text-decoration: var(--decor);
+  & :hover {
+    text-decoration: var(--hover--decor)
+    color: var(--hover--color);
+  }
+}
+
+
+button {
+  --transition: border-color 0.25s;
+  --line-height: 1.2;
+  --weight: 500;
+  
+  --pad: 0.6em 1.2em;
+  --bg: #1a1a1a;
+  border-radius: var(--round-corners);
+  border: var(--clear-border);
+  line-height: var(--line-height);
+  font-family: var(--font-pop);
+  font-weight: var(--weight);
+  font-size: var(--btn-fs);
+  padding: var(--pad);
+  
+  background-color: var(--bg);
+  transition: var(--transition)
+  cursor: pointer;
+
+  & :hover {
+    border-color: #646cff;
+  }
+
+  & :focus,
+  & :focus-visible {
+
+  outline: 4px auto @wk-ring;
+}
+
+.card :not(.large-card) {
+  display: flex;
+  place-items: center;
+  padding: var(--card--pad);
+}
+
+.row { display: flex; flex-direction: row; }
+.column { display: flex; flex-direction: column; };
+
+@keyframes spin {
+  from {
+    transform: var(--spin-start);
+  }
+  to {
+    transform: var(--spin-end);
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+  html { 
+    color-scheme: dark;
+  }
+}
+
+
+
