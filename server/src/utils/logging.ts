@@ -1,13 +1,7 @@
 import { kv } from './string.ts';
-function seperator() {
-  console.info('#--------------------------------------------------------#');
-}
-
-function newline() {
-  console.info('\n')
-}
-
-
+const seperator = () => console.info('#--------------------------------------------------------#');
+const newline = () => console.info('\n')
+const listening = (app) => console.info(`# [MAIN] listening on ${app.protocol()}://${app.host()}:${app.port()}`);
 function information(app) {
   seperator();
   console.info(kv("App Name", app.server.get('app.name')));
@@ -19,6 +13,6 @@ function information(app) {
 }
 
 
-const log = { seperator, newline, information }
+const log = { seperator, newline, listening, information }
 
 export default log;

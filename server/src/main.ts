@@ -1,24 +1,18 @@
 import app from './app/app.ts';
 import log from './utils/logging.ts';
+import { panic } from './utils/panic.ts';
 
 function main() {
+  log.newline();
   log.information(app);
-    log.newline(); 
-
-  
+  log.newline();
   app.server.listen(app.port(), (err) => {
-    if (err) {
-      // TODO: panic(err);
-      console.error('Error', err);
-    };
-    
-    console.info(`# [MAIN] listening on ${app.protocol()}://${app.host()}:${app.port()}`);
-
-
+    if (err) { panic(err) };
+    log.seperator()
+    log.listening(app);
+    log.seperator();
+    log.newline();
   });
-
-
-
 }
 
 main();
