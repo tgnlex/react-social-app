@@ -1,15 +1,20 @@
 import express from 'express';
+import cookieParser from 'cookie-parser'
+import cookieSession from 'cookie-session';
+import sessionConfig from './session.ts';
 import APP from './env.ts'
 
 const BODY_PARSERS = [
-  express.urlencoded({ extend: true }),
+  express.urlencoded({ extended: true }),
   express.json(),
   express.text(), 
   express.raw()
-]
+];
 
 const PLUGINS = [
-  ...BODY_PARSERS
+  ...BODY_PARSERS,
+  cookieParser(),
+  cookieSession(sessionConfig)
 ]
 
 const GLOBALS = [  
