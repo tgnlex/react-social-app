@@ -1,28 +1,19 @@
+import { handleError } from './middleware/error-handlers.ts';
+import Application from './modules/bootstrap.ts';
 import express from 'express';
 import config from '../config/application.ts';
 import router from './routes/index.ts';
 
-const application = { server: express() };
+const application = new Application(config);
+application.bootstrap();
 
 application.server.disable('x-powered-by');
 
-config.plugins.forEach((plug) => {
-  application.server.use(plug);
-});
-
-config.globals.forEach((glob) => {
-  application.server.set(glob.key, glob.value);
-});
 
 application.server.use('/api', router);
 
-application.server.use((err, req, res, next) => {
-  if (err) {
-    console.error(err)
-    next(err);
-  }
-  next();
-});
+
+application.server.use(handleError);
 
 
 export default application;

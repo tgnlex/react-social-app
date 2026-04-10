@@ -1,0 +1,15 @@
+.header {
+  --header--width: calc(var(--site--width) - var(--site--offset--width));
+  width: var(--header--width);
+}
+
+
+.navbar:not(.sidebar) {
+  --navbar--width: calc(var(--site--width) - var(--site--offset--width));
+  width: var(--navbar--width);
+}
+
+.footer {
+  --footer--width: calc(var(--site--width) - var(--site--offset--width));
+  width: var(--footer--width);
+}

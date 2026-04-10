@@ -23,8 +23,10 @@
   --laptop: 920px;
   --pc: 1200px;
 
+  --site--width: 100vw;
+  --site--height: 100vh;
 
-
+  --site--offset--width: clamp(1% 10px 5%);
   line-height: 1.5;
   font-family: var(--font-stack);
   font-weight: 400;

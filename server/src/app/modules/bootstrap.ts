@@ -12,7 +12,6 @@ interface AppConfig {
   queue?: any;
   cache?: any;
   logger?: any;
-
 }
 
 class Application {
@@ -30,18 +29,28 @@ class Application {
     if (config.cache) this.cache = config.cache;
   }
   constructor(config: AppConfig) {
-    this.submodules(this.config);
+    this.submodules(config);
     this.server = express();
     this.config = config;
   }
   bootstrap() {
     const { plugins, globals } = this.config;
+    this.server.disable('x-powered-by');
     plugins.forEach((plug) => { this.server.use(plug) });
-    globals.forEach((g) => { this.server.set(g.key, g.value) };
+    globals.forEach((g) => { this.server.set(g.key, g.value) });
   }
-  serve(PORT) {
-    return this.server.listen(PORT, () => {
-      if (err) { panic() }
-    }
-  }
+
+  protocol() { this.server.get('app.protocol') };
+  loglevel() { this.server.get('app.log')};
+  version() { this.server.get('app.version')};
+  name() { this.server.get('app.name')};
+  host() { this.server.get('app.host')};
+  port() { this.server.get('app.port')};
+  env() { this.server.get('app.env') };
+  development() {this.server.get('app.development') };
+  production() { this.server.get('app.production') };
+  test() { this.server.get('app.test') };
 }
+
+
+export default Application;

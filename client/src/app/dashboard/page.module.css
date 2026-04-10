@@ -1,0 +1,29 @@
+:root {
+
+  --profile--width: 20vw; 
+  --stats--width:  20vw;
+  --combined--width: calc(var(--profile--width) + var(--stats--width));
+  --content--width: calc(var(--site--width) - var(--combined--width));
+}
+
+.page, .main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.page {
+  overflow-y: scroll;
+}
+
+
+.profile {
+  width: var(--profile--width);
+}
+.stats {
+  width: var(--stats--width);
+}
+.content {
+  width: var(--content--width);
+  height: 100%;
+}

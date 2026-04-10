@@ -1,5 +1,5 @@
 import express from 'express';
-
+import APP from './env.ts'
 
 const BODY_PARSERS = [
   express.urlencoded({ extend: true }),
@@ -12,23 +12,19 @@ const PLUGINS = [
   ...BODY_PARSERS
 ]
 
-const GLOBALS = [
-  /*** API GLOBALS ***/
-  { key: 'api.version', value: '1.0.0' },
-  { key: 'api.protocol', value: 'http' },
-  { key: 'api.name', value: 'api-server' },
-  { key: 'api.host', value: '127.0.0.1' },
-  { key: 'api.port', value: 4000 },
-  { key: 'api.log', value: 'debug' },
-  { key: 'api.env', value: 'development' },
+const GLOBALS = [  
   /*** APP GLOBALS ***/
-  { key: 'app.version', value: '1.0.0'},
+  { key: 'app.version', value: APP.VERSION},
   { key: 'app.protocol', value: 'http'},
-  { key: 'app.name', value: 'react-app' },
-  { key: 'app.host', value: '127.0.0.1' },
-  { key: 'app.port', value: 3000 },
-  { key: 'app.log', value: 'debug' },
-  { key: 'app.env', value: 'development' },
+  { key: 'app.name', value: APP.NAME },
+  { key: 'app.host', value: APP.HOST },
+  { key: 'app.port', value: Number(APP.PORT) },
+  { key: 'app.log', value: APP.LOGS},
+  { key: 'app.env', value: APP.NODE},
+  { key: 'app.production', value: APP.PROD },
+  { key: 'app.development', value: APP.DEV },
+  { key: 'app.test', value: APP.TEST }
+
 ];
 
 const config = {
