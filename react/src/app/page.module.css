@@ -1,0 +1,53 @@
+
+
+.page {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.login {
+  --login--border: 6px double white;
+  --field--radius: var(--round-corners);
+  extends: .column;
+  border: var(--login--border);
+  background: inherit;
+  display: flex;
+  flex-direction: column;
+  & .field {
+    border-radius: var(--field-radius);
+  }
+}
+
+.welcome {
+    --pad-x: 0.5em;
+    --pad-y: 2em;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: var(--pad-x) var(--pad-y);
+ 
+  & .text {
+    --fs-min: clamp(2em, 36px, 2.5em);
+    --fs-mid: clamp(2.5em, 60px, 3em);
+    --fs-max: clamp(3em, 64px, 3.5em);
+
+    --size: clamp(var(--fs-min), var(--fs-mid), var(--fs-max));
+
+    --decoration: underline;
+    --text: inherit;
+    --weight: 200;
+    --line: 1.2;
+
+    text-decoration: var(--decoration);
+    font-weight: var(--weight);
+    line-height: var(--line);
+    font-size: var(--size);
+    color: var(--text);
+}

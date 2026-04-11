@@ -1,0 +1,59 @@
+:root {
+  
+  /*** FONT FAMILIES ***/
+  --font-stack: Inter system-ui Avenir, Helvetica, Arial, sans-serif;
+  
+  --font-pop: Poppins;
+  --font-mono: Roboto;
+  --font-sans: sans-serif;
+
+  /*** FONT SIZES ***/  
+  --fs-btn: clamp(0.8rem 1.1em 1.2rem);
+  --fs-text: clamp(0.5rem 1em 1.8rem);
+  --fs-link: clamp(1rem 1.4em 2rem);
+  --fs-heading: clamp(2.5rem 3em 4rem);
+  /** PADDING **/
+  --card--pad: clamp(1.5em 32px 2.5em);
+  
+  /*** BORDER RADIUS ***/
+  --round-corners: clamp(0.2rem 8px 0.8rem);
+  
+  /*** BORDERS ***/
+  --border--clear: 1px solid transparent;
+  --border--thin--black: 1px solid black;
+  --border--thin--white: 1px solid white;
+  --border--med--black: 2px solid black;
+  --border--med--white: 2px solid white;
+  --border--thick--black: 3px solid black;
+  --border--thick--white: 3px solid white;
+  /*** PRIMARY COLORS ***/
+  --text: rgba(255, 255, 255, 0.87);
+  --bg: rgba(24, 24, 2, 0.91);
+  --dark--bg: rgba(10, 10, 10, 0.91);
+  --dark--text: rgba(237, 237, 237, 0.95);
+  --dark--text: #ededed;
+ 
+  /*** DIMENSIONS ***/
+  --site--width: 100vw;
+  --site--height: 100vh;
+  --site--offset--width: clamp(1% 10px 5%);
+  --layout--width: calc(var(--site--width) - var(--site--width--offset));
+
+
+  /*** DROP SHADOWS **/
+  --ds-1: drop-shadow(0 0 2em #646cffaa);
+  --ds-2: drop-shadow(0 0 2em #61dafbaa);
+  /*** ANIMATIONS ***/
+  --spin-animation: spin infinite 20s linear;
+  --spin-start: rotate(0deg);
+  --spin-end: rotate(360deg);
+  /*** VEMDOR ***/
+  --wk-ring: -webkit-focus-ring-color;
+  /*** DEVICE SIZES ***/
+  --mobile: 600px;
+  --tablet: 720px;
+  --laptop: 920px;
+  --pc: 1200px;
+  /*** OTHER ***/
+  --opaque: 0.8;
+}

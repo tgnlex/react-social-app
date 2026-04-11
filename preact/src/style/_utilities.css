@@ -1,0 +1,31 @@
+
+.grid {
+	margin-top: 5rem;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 1.5rem;
+}
+
+.resource {
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	text-align: left;
+	text-decoration: none;
+	color: #222;
+	background-color: #f1f1f1;
+	border: 1px solid transparent;
+}
+
+/**.field {
+  width: 10rem;
+} **/
+
+.btn {
+  background-color: var(--text);
+  margin: 0.25em;
+}
+
+.btn.btn-submit {
+  width: 10rem;
+  
+}

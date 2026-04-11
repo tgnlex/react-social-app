@@ -1,0 +1,9 @@
+.header {
+  --header--width: calc(var(--site--width) - var(--site--offset--width));
+  width: var(--header--width);
+}
+
+.footer {
+  --footer--width: calc(var(--site--width) - var(--site--offset--width));
+  width: var(--footer--width);
+}

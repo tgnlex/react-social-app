@@ -1,4 +1,4 @@
-
+u
 
 .page {
   display: flex;
@@ -13,14 +13,30 @@
 }
 
 .login {
+  --login--width: calc(var(--site--width) / 5);
   --login--border: 6px double white;
-  --field--radius: var(--round-corners);
-  extends: .column;
+  --login--pad: 2em;
+  border-radius: var(--round-corners);
   border: var(--login--border);
   background: inherit;
-  & .field {
-    border-radius: var(--field-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--login--pad);
+  width: var(--login--width);
+  &.heading { 
+    --mb: 2rem;
+    margin-bottom: var(--mb);;
   }
+}
+.field {
+  --field--radius: var(--round--corners);
+  --field--width: 10rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  width: var(--field--width);
+  border-radius: var(--field-radius);
 }
 
 .welcome {
@@ -31,10 +47,11 @@
     place-items: center;
     padding: var(--pad-x) var(--pad-y);
  
-  & .text {
+  &.text {
     --fs-min: clamp(2em, 36px, 2.5em);
     --fs-mid: clamp(2.5em, 60px, 3em);
     --fs-max: clamp(3em, 64px, 3.5em);
+
 
     --size: clamp(var(--fs-min), var(--fs-mid), var(--fs-max));
 
@@ -48,4 +65,5 @@
     line-height: var(--line);
     font-size: var(--size);
     color: var(--text);
+  }
 }

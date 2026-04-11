@@ -1,0 +1,21 @@
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--dark--text);
+    background: var(--dark--bg);
+  }
+  html { 
+    color-scheme: dark;
+  }
+}
+
+
+@media (max-width: var(--mobile)) {
+	main {
+    --main-margin: clamp(1em 2rem 3em);
+		margin: var(--main-margin);
+	}
+}
+
+
